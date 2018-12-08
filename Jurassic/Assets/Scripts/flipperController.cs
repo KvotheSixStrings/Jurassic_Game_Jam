@@ -13,7 +13,8 @@ public class flipperController : MonoBehaviour {
 
 	
 	void Start () {
-        hinge = GetComponent<HingeJoint>(); 
+        hinge = GetComponent<HingeJoint>();
+        hinge.useSpring = true;
 	}
 	
 	
