@@ -20,7 +20,9 @@ public class ShakeOnCollision : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-
+        if (Input.GetKeyDown(KeyCode.UpArrow)) {
+            Hit();
+        }
         if (wasHit) {
             Shake();
         }

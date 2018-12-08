@@ -8,13 +8,24 @@ public class Bumper : MonoBehaviour {
 	public bool hasMultipleStages = false;
     public Texture[] textures;
     public int addToMultiplerValue = 2;
+    public float switchDely = 1f;
+    public AudioClip[] clips;
     private int hitCount = 0;
     private Material material;
+    private PlaySoundEffect soundEffect;
 	
 	void Start () {
         material = GetComponent<MeshRenderer>().material;
         material.mainTexture = textures[hitCount];
-	}
+        soundEffect = GetComponent<PlaySoundEffect>();
+        soundEffect.clip = clips[hitCount];
+    }
+
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.UpArrow)) {
+            Hit();
+        }
+    }
 
     private void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.CompareTag("Ball")) {
@@ -26,10 +37,12 @@ public class Bumper : MonoBehaviour {
     private void Hit() {
         hitCount++;
         if (hitCount >= textures.Length) {
-            Switch();
+            soundEffect.clip = clips[hitCount -1];
+            Invoke("Switch", switchDely);
         }
         else {
             material.mainTexture = textures[hitCount];
+            soundEffect.clip = clips[hitCount];
         }
     }
 

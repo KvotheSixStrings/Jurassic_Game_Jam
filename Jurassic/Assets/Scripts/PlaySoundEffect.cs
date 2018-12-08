@@ -12,6 +12,13 @@ public class PlaySoundEffect : MonoBehaviour {
     public bool playOnTrigger = false;
     public bool isCollider2D = false;
 
+
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.UpArrow)) {
+            PlayClip();
+        }
+    }
+
     private void OnCollisionEnter(Collision collision) {
         if (playOnCollison) {
             if (!isCollider2D) {
