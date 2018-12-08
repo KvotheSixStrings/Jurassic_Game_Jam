@@ -271,6 +271,7 @@ MonoBehaviour:
   multiplierText: {fileID: 0}
   ballText: {fileID: 0}
   highScoreText: {fileID: 0}
+  gameOverText: {fileID: 0}
   messageToPlayerText: {fileID: 0}
   gameOverMessage: 
   timeToWaitToSwitchHighScore: 3.5
