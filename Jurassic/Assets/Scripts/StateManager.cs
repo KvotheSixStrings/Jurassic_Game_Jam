@@ -25,11 +25,15 @@ public class StateManager : MonoBehaviour {
     public int amountToIncreaseMultiplierPerInterval = 1;
     private int defaultMultiplier = 1;
 
-    [Header("Text Fields")]
+    [Header("Text Controls")]
     public Text scoreText;
     public Text multiplierText;
     public Text ballText;
     public Text highScoreText;
+    public Text messageToPlayerText;
+    public string gameOverMessage;
+    public float timeToWaitToSwitchHighScore = 3.5f;
+    public string highScoreMessage;
 
     void Start() {
         instance = this;
@@ -44,7 +48,7 @@ public class StateManager : MonoBehaviour {
     }
 
     public void SubtractFromScore(int val) {
-        score -= val;
+        score = score - val * multiplier;
         if (scoreText)
             scoreText.text = score.ToString();
 
@@ -73,7 +77,8 @@ public class StateManager : MonoBehaviour {
 
     public void BallLost() {
         ballInPlay = false;
-        Destroy(currentBall);
+        if(currentBall)
+            Destroy(currentBall);
         currentBallCount++;
         if (currentBallCount > numberOfBalls) {
             GameOver();
@@ -86,10 +91,17 @@ public class StateManager : MonoBehaviour {
         }
     }
     private void SpawnBall() {
-        currentBall = Instantiate(ballPrefab);
-        currentBall.transform.position = ballSpawnPosition.position;
+        if (ballPrefab) {
+            currentBall = Instantiate(ballPrefab);
+            currentBall.transform.position = ballSpawnPosition.position;
+        }
+        else {
+            Debug.LogWarning("Assign the Ball Prefab");
+        }
     }
     private void GameOver() {
+        if(messageToPlayerText)
+            messageToPlayerText.text = gameOverMessage;
         CheckHighScore();
     }
 
@@ -97,18 +109,20 @@ public class StateManager : MonoBehaviour {
         if (PlayerPrefs.HasKey("HighScore")) {
             int temp = PlayerPrefs.GetInt("HighScore");
             if (temp < score) {
-                PlayerPrefs.SetInt("HighScore", score);
-                if (highScoreText)
-                    highScoreText.text = highScoreText.ToString();
-
+                Invoke("ChangeHighScore", timeToWaitToSwitchHighScore);                
             }
         }
         else {
-            PlayerPrefs.SetInt("HighScore", score);
-            if (highScoreText)
-                highScoreText.text = highScoreText.ToString();
-
+            Invoke("ChangeHighScore", timeToWaitToSwitchHighScore);
         }
+    }
+
+    private void ChangeHighScore() {
+        PlayerPrefs.SetInt("HighScore", score);
+        if (highScoreText)
+            highScoreText.text = highScoreText.ToString();
+        if (messageToPlayerText)
+            messageToPlayerText.text = highScoreMessage;
     }
 
     public void ResetGame() {
@@ -123,6 +137,8 @@ public class StateManager : MonoBehaviour {
             ballText.text = ballText.ToString();
         if (highScoreText)
             highScoreText.text = highScoreText.ToString();
+        if (messageToPlayerText)
+            messageToPlayerText.text = "";
 
     }
 

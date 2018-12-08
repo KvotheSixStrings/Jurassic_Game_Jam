@@ -6,7 +6,7 @@ public class AdjustScore : MonoBehaviour {
 
     public int scoreValue = 10;
     public bool shouldAdd = true;
-
+    public AudioClip clip;
     private void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.CompareTag("Ball")) {
             if (shouldAdd) {
