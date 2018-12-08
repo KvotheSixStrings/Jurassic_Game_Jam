@@ -30,6 +30,7 @@ public class StateManager : MonoBehaviour {
     public Text multiplierText;
     public Text ballText;
     public Text highScoreText;
+    public Text gameOverText;
     public Text messageToPlayerText;
     public string gameOverMessage;
     public float timeToWaitToSwitchHighScore = 3.5f;
@@ -37,6 +38,10 @@ public class StateManager : MonoBehaviour {
 
     void Start() {
         instance = this;
+        if (PlayerPrefs.HasKey("HighScore")) {
+            if (highScoreText)
+                highScoreText.text = PlayerPrefs.GetInt("HighScore").ToString();
+        }
         SpawnBall();
         InvokeRepeating("ConstantMultiplierAdd", intervalToIncreaseMultiplier, intervalToIncreaseMultiplier);
     }
@@ -100,8 +105,8 @@ public class StateManager : MonoBehaviour {
         }
     }
     private void GameOver() {
-        if(messageToPlayerText)
-            messageToPlayerText.text = gameOverMessage;
+        if(gameOverText)
+            gameOverText.text = gameOverMessage;
         CheckHighScore();
     }
 
@@ -109,18 +114,18 @@ public class StateManager : MonoBehaviour {
         if (PlayerPrefs.HasKey("HighScore")) {
             int temp = PlayerPrefs.GetInt("HighScore");
             if (temp < score) {
-                Invoke("ChangeHighScore", timeToWaitToSwitchHighScore);                
+                ChangeHighScore();
             }
         }
         else {
-            Invoke("ChangeHighScore", timeToWaitToSwitchHighScore);
+            ChangeHighScore();
         }
     }
 
     private void ChangeHighScore() {
         PlayerPrefs.SetInt("HighScore", score);
         if (highScoreText)
-            highScoreText.text = highScoreText.ToString();
+            highScoreText.text = score.ToString();
         if (messageToPlayerText)
             messageToPlayerText.text = highScoreMessage;
     }
@@ -137,6 +142,8 @@ public class StateManager : MonoBehaviour {
             ballText.text = ballText.ToString();
         if (highScoreText)
             highScoreText.text = highScoreText.ToString();
+        if (gameOverText)
+            gameOverText.text = "";
         if (messageToPlayerText)
             messageToPlayerText.text = "";
 

@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 136941966711305516}
   - component: {fileID: 114592039140889942}
   - component: {fileID: 114081159540958322}
+  - component: {fileID: 114358661895762104}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -99,6 +100,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreValue: 100
   shouldAdd: 1
+--- !u!114 &114358661895762104
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1837029423148824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af1db2b475f16f24b9016c4cee2eaede, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 0}
+  tagOfObjectToPlay: Ball
+  playOnCollison: 1
+  playOnTrigger: 0
+  isCollider2D: 0
 --- !u!114 &114592039140889942
 MonoBehaviour:
   m_ObjectHideFlags: 1
