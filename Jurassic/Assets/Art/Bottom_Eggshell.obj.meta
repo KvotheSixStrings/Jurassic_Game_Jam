@@ -8,6 +8,7 @@ ModelImporter:
     400000: //RootNode
     400002: polySurface1_pSphere1
     2100000: polySurface1_pSphere1Mat
+    2100002: aiStandardSurface1SG
     2300000: polySurface1_pSphere1
     3300000: polySurface1_pSphere1
     4300000: polySurface1_pSphere1

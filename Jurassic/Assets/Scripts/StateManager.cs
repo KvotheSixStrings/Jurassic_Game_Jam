@@ -94,19 +94,18 @@ public class StateManager : MonoBehaviour {
 
     public void BallLost() {
         ballInPlay = false;
+        FindObjectOfType<SwitchFromTriggerToCollison>().collider.isTrigger = true;
+        balls[numberOfBalls - currentBallCount].enabled = false;
         Debug.Log("In ball lost");
         if(currentBall)
             Destroy(currentBall);
         currentBallCount++;
         if (currentBallCount > numberOfBalls) {
-            balls[numberOfBalls - currentBallCount].enabled = false;
             GameObject go = Instantiate(gameOverParticalSystem);
             go.transform.position = gameOverPosition.position;
             Invoke("GameOver", waitTimeForGameOverText);
         }
         else {
-            if (ballText)
-                ballText.text = ballText.ToString();
             SpawnBall();
 
         }

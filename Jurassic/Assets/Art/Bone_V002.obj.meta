@@ -8,6 +8,7 @@ ModelImporter:
     400000: Bone
     400002: //RootNode
     2100000: BoneMat
+    2100002: aiStandardSurface1SG
     2300000: Bone
     3300000: Bone
     4300000: Bone
