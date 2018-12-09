@@ -11,6 +11,8 @@ public class ChangeToBumper : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         Invoke("SwitchToBumper", waitToSwitchTime);
+        float rotate = Random.Range(0f, 360f);
+        transform.localRotation = Quaternion.EulerAngles(0, rotate, 0);
 	}
 
     private void SwitchToBumper() {

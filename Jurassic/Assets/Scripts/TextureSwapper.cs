@@ -2,23 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bumper : MonoBehaviour {
+public class TextureSwapper : MonoBehaviour {
 
-    public GameObject switchTo;
-	public bool hasMultipleStages = false;
+    public bool hasMultipleStages = false;
     public Texture[] textures;
     public int addToMultiplerValue = 2;
-    public float switchDely = 1f;
-    public AudioClip[] clips;
     private int hitCount = 0;
     private Material material;
-    private PlaySoundEffect soundEffect;
-	
-	void Start () {
+
+    void Start() {
         material = GetComponent<MeshRenderer>().material;
         material.mainTexture = textures[hitCount];
-        soundEffect = GetComponent<PlaySoundEffect>();
-        soundEffect.clip = clips[hitCount];
+
     }
 
     private void Update() {
@@ -29,7 +24,7 @@ public class Bumper : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.CompareTag("Ball")) {
-            if(hasMultipleStages)
+            if (hasMultipleStages)
                 Hit();
         }
     }
@@ -37,20 +32,17 @@ public class Bumper : MonoBehaviour {
     private void Hit() {
         hitCount++;
         if (hitCount >= textures.Length) {
-            soundEffect.clip = clips[hitCount -1];
-            Invoke("Switch", switchDely);
+            ResetTextures();
         }
         else {
             material.mainTexture = textures[hitCount];
-            soundEffect.clip = clips[hitCount];
         }
     }
 
-    private void Switch() {
-        GameObject go = Instantiate(switchTo);
-        go.transform.position = transform.parent.position;
+    private void ResetTextures() {
+        hitCount = 0;
+        material.mainTexture = textures[hitCount];
         StateManager.instance.AddToMultiplier(addToMultiplerValue);
-        go.GetComponent<ChangeToBumper>().multiplierVal = addToMultiplerValue;
-        Destroy(gameObject.transform.parent.gameObject);
+
     }
 }

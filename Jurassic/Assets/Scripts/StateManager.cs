@@ -68,21 +68,21 @@ public class StateManager : MonoBehaviour {
     public void AddToMultiplier(int val) {
         multiplier += val;
         if (multiplierText)
-            multiplierText.text = multiplierText.ToString();
+            multiplierText.text = multiplier.ToString();
 
     }
 
     public void SubtractFromMultiplier(int val) {
         multiplier -= val;
         if (multiplierText)
-            multiplierText.text = multiplierText.ToString();
+            multiplierText.text = multiplier.ToString();
 
     }
 
     public void ResetMultiplier() {
         multiplier = defaultMultiplier;
         if (multiplierText)
-            multiplierText.text = multiplierText.ToString();
+            multiplierText.text = multiplier.ToString();
 
     }
 
@@ -159,11 +159,9 @@ public class StateManager : MonoBehaviour {
         if (scoreText)
             scoreText.text = score.ToString();
         if (multiplierText)
-            multiplierText.text = multiplierText.ToString();
-        if (ballText)
-            ballText.text = ballText.ToString();
+            multiplierText.text = multiplier.ToString();
         if (highScoreText)
-            highScoreText.text = highScoreText.ToString();
+            highScoreText.text = PlayerPrefs.GetInt("HighScore").ToString();
         if (gameOverText)
             gameOverText.text = "";
         if (messageToPlayerText)

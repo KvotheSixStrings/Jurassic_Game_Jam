@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 33452431419614096}
   - component: {fileID: 23439648147944886}
   - component: {fileID: 65956342820261904}
+  - component: {fileID: 114789645355559830}
+  - component: {fileID: 114330131581247804}
   m_Layer: 0
   m_Name: Volcano
   m_TagString: Untagged
@@ -37,8 +39,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4582005923275978}
-  - component: {fileID: 114103856023792836}
-  - component: {fileID: 114714737588570978}
   m_Layer: 0
   m_Name: Volcano
   m_TagString: Untagged
@@ -93,15 +93,15 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1632167507052330}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.38699415, z: -0, w: 0.92208225}
   m_LocalPosition: {x: 7.1824, y: 0.81, z: 0.095324}
-  m_LocalScale: {x: 0.53431875, y: 0.53431875, z: 0.53431875}
+  m_LocalScale: {x: 0.47111952, y: 0.47111952, z: 0.47111952}
   m_Children:
   - {fileID: 4329008752685850}
   - {fileID: 4096308688437932}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -45.535004, z: 0}
 --- !u!23 &23439648147944886
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -157,24 +157,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 9.793326, y: 4.996789, z: 8.325291}
   m_Center: {x: -0.25568482, y: 1.7666135, z: 0.07859327}
---- !u!114 &114103856023792836
+--- !u!114 &114330131581247804
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1632167507052330}
+  m_GameObject: {fileID: 1614071749441104}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6dfa913aca492845bdf3bdbfb048f95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mySystem: {fileID: 114714737588570978}
---- !u!114 &114714737588570978
+  mySystem: {fileID: 0}
+--- !u!114 &114789645355559830
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1632167507052330}
+  m_GameObject: {fileID: 1614071749441104}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1f4e9b0b365f544baa5bf7f76e89b0e, type: 3}

@@ -7,8 +7,10 @@ public class PlayParticalsOnHit : MonoBehaviour {
     public SpawnParticalSystem mySystem;
 	
 	// Update is called once per frame
-	void Update () {
-        if(Input.GetKeyDown(KeyCode.P))
+
+    private void OnCollisionEnter(Collision collision) {
+        if(collision.gameObject.CompareTag("Ball"))
             mySystem.SpawnParticals();
-	}
+
+    }
 }

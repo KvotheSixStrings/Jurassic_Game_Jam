@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 33621996401512794}
   - component: {fileID: 23258246635332064}
   - component: {fileID: 65984577260564010}
+  - component: {fileID: 114133536122416942}
+  - component: {fileID: 114814842481818660}
   m_Layer: 0
   m_Name: pSphere1
   m_TagString: Untagged
@@ -37,6 +39,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4969506613097250}
+  - component: {fileID: 114143834766323458}
+  - component: {fileID: 114251057218111106}
   m_Layer: 0
   m_Name: Egg
   m_TagString: Untagged
@@ -125,3 +129,68 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.8658104, y: 7.377746, z: 5.413179}
   m_Center: {x: -21.920218, y: 0, z: -0.00000047683716}
+--- !u!114 &114133536122416942
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1489105180766616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e57b589ce2c1a0b4fb924b75147dacac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  switchTo: {fileID: 1267109336466144, guid: fdbee6805f1741142a20b17b374922f5, type: 2}
+  hasMultipleStages: 1
+  textures:
+  - {fileID: 2800000, guid: 42866de93bc2a5847a8eef576a54c0fd, type: 3}
+  - {fileID: 2800000, guid: 113ca42294d76fb47b26db2327882716, type: 3}
+  addToMultiplerValue: 2
+  switchDely: 0.2
+  clips:
+  - {fileID: 8300000, guid: ea0949055f2f2b04aaa0fa227f1384b1, type: 3}
+  - {fileID: 8300000, guid: 799a60944794664418a60dc5da99ad08, type: 3}
+  - {fileID: 8300000, guid: c3e1e36b39ce76641b50549b2e1b2bcc, type: 3}
+--- !u!114 &114143834766323458
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1502454152139284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ddf9720bcd4f794294559daa5aee4b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 75
+  amount: 0.15
+  duration: 0.2
+--- !u!114 &114251057218111106
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1502454152139284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 756bcd8e0dd565044a4b9b24b93cc1aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreValue: 100
+  shouldAdd: 1
+--- !u!114 &114814842481818660
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1489105180766616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af1db2b475f16f24b9016c4cee2eaede, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: c3e1e36b39ce76641b50549b2e1b2bcc, type: 3}
+  tagOfObjectToPlay: Ball
+  playOnCollison: 1
+  playOnTrigger: 0
+  isCollider2D: 0
