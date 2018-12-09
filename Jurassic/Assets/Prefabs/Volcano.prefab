@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4329008752685850}
   - component: {fileID: 33452431419614096}
   - component: {fileID: 23439648147944886}
+  - component: {fileID: 64186608751658024}
   m_Layer: 0
   m_Name: Volcano
   m_TagString: Untagged
@@ -67,7 +68,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1989631009876196}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.95, z: 0.03}
+  m_LocalPosition: {x: 0, y: 4.22, z: 0.03}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 4582005923275978}
@@ -93,8 +94,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1632167507052330}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.18, y: 0.6, z: 0.12}
-  m_LocalScale: {x: 0.39001366, y: 0.39001366, z: 0.39001366}
+  m_LocalPosition: {x: 7.1824, y: 0.81, z: 0.095324}
+  m_LocalScale: {x: 0.53431875, y: 0.53431875, z: 0.53431875}
   m_Children:
   - {fileID: 4329008752685850}
   - {fileID: 4096308688437932}
@@ -117,7 +118,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: ffa65bc9111f55d419307e4465afcfac, type: 2}
-  - {fileID: 2100000, guid: da769b1f99714de4fb7c2d8a88a91391, type: 2}
+  - {fileID: 2100000, guid: 42e26e838cb21e944aa7de2aae4edefc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -143,6 +144,20 @@ MeshFilter:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1614071749441104}
+  m_Mesh: {fileID: 4300000, guid: 21cc77ef6c99d384788244e00c76584f, type: 3}
+--- !u!64 &64186608751658024
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1614071749441104}
+  m_Material: {fileID: 13400000, guid: 1edc1a3746bf01d4e91e7cbecf017e0e, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 21cc77ef6c99d384788244e00c76584f, type: 3}
 --- !u!114 &114103856023792836
 MonoBehaviour:
