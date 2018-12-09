@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4329008752685850}
   - component: {fileID: 33452431419614096}
   - component: {fileID: 23439648147944886}
-  - component: {fileID: 64186608751658024}
+  - component: {fileID: 65956342820261904}
   m_Layer: 0
   m_Name: Volcano
   m_TagString: Untagged
@@ -145,8 +145,8 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1614071749441104}
   m_Mesh: {fileID: 4300000, guid: 21cc77ef6c99d384788244e00c76584f, type: 3}
---- !u!64 &64186608751658024
-MeshCollider:
+--- !u!65 &65956342820261904
+BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -154,11 +154,9 @@ MeshCollider:
   m_Material: {fileID: 13400000, guid: 1edc1a3746bf01d4e91e7cbecf017e0e, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: 21cc77ef6c99d384788244e00c76584f, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 9.793326, y: 4.996789, z: 8.325291}
+  m_Center: {x: -0.25568482, y: 1.7666135, z: 0.07859327}
 --- !u!114 &114103856023792836
 MonoBehaviour:
   m_ObjectHideFlags: 1
