@@ -671,7 +671,7 @@ GameObject:
   - component: {fileID: 346580121}
   - component: {fileID: 346580120}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: MessageToPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -727,7 +727,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Your Now The T-Rex
+  m_Text: 
 --- !u!222 &346580121
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -876,7 +876,7 @@ GameObject:
   - component: {fileID: 531547606}
   - component: {fileID: 531547605}
   m_Layer: 5
-  m_Name: Text
+  m_Name: GameOverText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -932,7 +932,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You Went Extinct
+  m_Text: 
 --- !u!222 &531547606
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1034,8 +1034,36 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &569556821
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 569556822}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &569556822
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 569556821}
+  m_LocalRotation: {x: 0, y: -0.79335344, z: 0, w: 0.6087613}
+  m_LocalPosition: {x: -4.85, y: 1.72, z: 1.86}
+  m_LocalScale: {x: 7.1619, y: 7.1619, z: 7.1619}
+  m_Children: []
+  m_Father: {fileID: 581576699}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -105, z: 0}
 --- !u!1 &581576697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1104,7 +1132,8 @@ Transform:
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 569556822}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
@@ -1124,6 +1153,10 @@ MonoBehaviour:
   numberOfBalls: 3
   currentBallCount: 1
   ballInPlay: 0
+  balls:
+  - {fileID: 253274387}
+  - {fileID: 408195310}
+  - {fileID: 548780859}
   score: 0
   multiplier: 1
   intervalToIncreaseMultiplier: 10
@@ -1132,11 +1165,15 @@ MonoBehaviour:
   multiplierText: {fileID: 0}
   ballText: {fileID: 0}
   highScoreText: {fileID: 0}
-  gameOverText: {fileID: 0}
-  messageToPlayerText: {fileID: 0}
+  gameOverText: {fileID: 531547605}
+  messageToPlayerText: {fileID: 346580120}
   gameOverMessage: You Went Extinct
-  timeToWaitToSwitchHighScore: 3.5
-  highScoreMessage: Your Now The T-Rex
+  highScoreMessage: You're Now The T-Rex
+  gameOverParticalSystem: {fileID: 1469184524809472, guid: b3e845722c076d449a04a31bb73ba795,
+    type: 2}
+  gameOverPosition: {fileID: 569556822}
+  waitTimeForGameOverText: 3
+  gameUi: {fileID: 2117918935}
 --- !u!114 &581576701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1282,7 +1319,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4175267774923340, guid: 4724b9f7d6d52c745872d2f2be252421, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 136085539010102562, guid: 4724b9f7d6d52c745872d2f2be252421,
         type: 2}
@@ -1476,7 +1513,7 @@ RectTransform:
   - {fileID: 2117918936}
   - {fileID: 1638488119}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1766,7 +1803,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.85}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.725006, y: -1.8317032}
+  m_AnchoredPosition: {x: 2.725006, y: -1.8316956}
   m_SizeDelta: {x: 5.45, y: 3.6633}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1035211506
@@ -1809,6 +1846,23 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1035211504}
   m_CullTransparentMesh: 0
+--- !u!1 &1081275328 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1084984824731942, guid: a09fdb953fb8a4f4baa642382d0ceb07,
+    type: 2}
+  m_PrefabInternal: {fileID: 1923495302}
+--- !u!65 &1081275332
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1081275328}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 31.763775, y: 0.1, z: 19.225117}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1259053218
 GameObject:
   m_ObjectHideFlags: 0
@@ -1941,52 +1995,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1277986743}
   m_CullTransparentMesh: 0
---- !u!1001 &1414987489
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4632888203439750, guid: b36e5394bf3902b41877ecba9aa55b8d, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -1.87
-      objectReference: {fileID: 0}
-    - target: {fileID: 4632888203439750, guid: b36e5394bf3902b41877ecba9aa55b8d, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.186
-      objectReference: {fileID: 0}
-    - target: {fileID: 4632888203439750, guid: b36e5394bf3902b41877ecba9aa55b8d, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -6.479
-      objectReference: {fileID: 0}
-    - target: {fileID: 4632888203439750, guid: b36e5394bf3902b41877ecba9aa55b8d, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4632888203439750, guid: b36e5394bf3902b41877ecba9aa55b8d, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0.79335344
-      objectReference: {fileID: 0}
-    - target: {fileID: 4632888203439750, guid: b36e5394bf3902b41877ecba9aa55b8d, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4632888203439750, guid: b36e5394bf3902b41877ecba9aa55b8d, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.6087613
-      objectReference: {fileID: 0}
-    - target: {fileID: 4632888203439750, guid: b36e5394bf3902b41877ecba9aa55b8d, type: 2}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1436447386774278, guid: b36e5394bf3902b41877ecba9aa55b8d, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b36e5394bf3902b41877ecba9aa55b8d, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1 &1509043220
 GameObject:
   m_ObjectHideFlags: 0
@@ -2078,7 +2086,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1638488119
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2229,7 +2237,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4597821586292668, guid: 5924dba5cfc15684490a99e6a755a9b3, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1629524248493280, guid: 5924dba5cfc15684490a99e6a755a9b3, type: 2}
       propertyPath: m_Name
@@ -2387,7 +2395,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4582005923275978, guid: 520b631d8dce466409f181051441247c, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4582005923275978, guid: 520b631d8dce466409f181051441247c, type: 2}
       propertyPath: m_LocalScale.x
@@ -2554,7 +2562,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4723678512848382, guid: a09fdb953fb8a4f4baa642382d0ceb07, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 23674921989932996, guid: a09fdb953fb8a4f4baa642382d0ceb07,
         type: 2}

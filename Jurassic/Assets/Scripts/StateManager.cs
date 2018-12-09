@@ -15,6 +15,7 @@ public class StateManager : MonoBehaviour {
     public int numberOfBalls = 3;
     public int currentBallCount = 1;
     public bool ballInPlay = false;
+    public RawImage[] balls;
 
     [Header("Score Controls")]
     public int score = 0;
@@ -33,8 +34,13 @@ public class StateManager : MonoBehaviour {
     public Text gameOverText;
     public Text messageToPlayerText;
     public string gameOverMessage;
-    public float timeToWaitToSwitchHighScore = 3.5f;
     public string highScoreMessage;
+
+    [Header("Game Over Settings")]
+    public GameObject gameOverParticalSystem;
+    public Transform gameOverPosition;
+    public float waitTimeForGameOverText = 3f;
+    public GameObject gameUi;
 
     void Start() {
         instance = this;
@@ -80,13 +86,22 @@ public class StateManager : MonoBehaviour {
 
     }
 
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.U)) {
+            BallLost();
+        }   
+    }
+
     public void BallLost() {
         ballInPlay = false;
         if(currentBall)
             Destroy(currentBall);
+        balls[numberOfBalls - currentBallCount].enabled = false;
         currentBallCount++;
         if (currentBallCount > numberOfBalls) {
-            GameOver();
+            GameObject go = Instantiate(gameOverParticalSystem);
+            go.transform.position = gameOverPosition.position;
+            Invoke("GameOver", waitTimeForGameOverText);
         }
         else {
             if (ballText)
@@ -105,9 +120,11 @@ public class StateManager : MonoBehaviour {
         }
     }
     private void GameOver() {
+        gameUi.SetActive(false);
         if(gameOverText)
             gameOverText.text = gameOverMessage;
         CheckHighScore();
+        Invoke("ResetGame", 5f);
     }
 
     private void CheckHighScore() {
@@ -131,9 +148,13 @@ public class StateManager : MonoBehaviour {
     }
 
     public void ResetGame() {
+        gameUi.SetActive(true);
         score = 0;
         ResetMultiplier();
         currentBallCount = 1;
+        foreach(RawImage go in balls) {
+            go.enabled =true;
+        }
         if (scoreText)
             scoreText.text = score.ToString();
         if (multiplierText)
