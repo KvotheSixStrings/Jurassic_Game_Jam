@@ -6,26 +6,21 @@ Material:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Rock
-  m_Shader: {fileID: 4800000, guid: 4f726be83ba72084792ae45251375596, type: 3}
-  m_ShaderKeywords: _ALPHATEST_ON _NORMALMAP
-  m_LightmapFlags: 5
+  m_Name: initialShadingGroup
+  m_Shader: {fileID: 4800000, guid: 0ed5587bbc5e364438ca69f379bcf999, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
-  stringTagMap:
-    RenderType: TransparentCutout
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 91a3e0da2e044804e83ae61f10d37518, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _BumpTex:
-        m_Texture: {fileID: 2800000, guid: 91a3e0da2e044804e83ae61f10d37518, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: 2800000, guid: 1931425b86a63f445b9a37c1830a5699, type: 3}
+        m_Scale: {x: 93.78, y: -19.5}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
         m_Texture: {fileID: 0}
@@ -43,12 +38,8 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _EmissionTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: c098fe8a666c4c04e89a3806760d1d11, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -63,28 +54,38 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SpecGlossMap:
-        m_Texture: {fileID: 0}
+    - _PerlinNoise:
+        m_Texture: {fileID: 2800000, guid: ac8aea2c321c7c348bf4fbcd4fecfc2e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _BumpAmt: 15.8
     - _BumpScale: 1
-    - _Cutoff: 0.049396556
-    - _Cutout: 0.456
-    - _Cutout2: 0
-    - _CutoutThickness: 0.02
+    - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Glossiness: 0.36
-    - _Metallic: 0.695
-    - _Mode: 1
+    - _FPOW: 5.2
+    - _GlossMapScale: 1
+    - _Glossiness: 0
+    - _GlossyReflections: 1
+    - _Metallic: 0
+    - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _R0: 0.02
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _BorderColor: {r: 2, g: 0.75000006, b: 0.75000006, a: 1}
-    - _Color: {r: 0.24264705, g: 0.04995675, b: 0.04995675, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _SpecColor: {r: 0.5808823, g: 0.5808823, b: 0.5808823, a: 1}
+    - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _DropWavesScale: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
+    - _FireOffsetSpeed: {r: 0.3, g: 0.75, b: 0, a: 0}
+    - _NoiseScale: {r: 1, g: 1, b: 1, a: 0.1}
+    - _RimColor: {r: 0, g: 0.8963301, b: 0.9528302, a: 0.5}
+    - _Speed: {r: 1, g: 0, b: 0, a: 0}
+    - _TintColor: {r: 0.31078678, g: 0.39863124, b: 0.6792453, a: 1}
+    - _TwistScale: {r: 1, g: 0.2, b: 2, a: 0}
+    - _WavesScale: {r: 10, g: 0.08, b: 10, a: 0}
