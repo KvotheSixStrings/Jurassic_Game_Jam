@@ -7,6 +7,7 @@ public class PlungerScript : MonoBehaviour {
     float power;
     public float minPower = 0f;
     public float maxPower = 100f;
+    public float powerIncrement = 150;
     public Slider powerSlider;
     List<Rigidbody> ballList;
     bool ballReady;
@@ -31,12 +32,12 @@ public class PlungerScript : MonoBehaviour {
             ballReady = true;
             if (Input.GetKey(KeyCode.Space)) {
                 if(power <= maxPower) {
-                    power += 50 * Time.deltaTime;
+                    power += powerIncrement * Time.deltaTime;
                 }
             }
             if (Input.GetKeyUp(KeyCode.Space)) {
                foreach(Rigidbody r in ballList) {
-                    r.AddForce(power * Vector3.forward);
+                    r.AddForce(power * Vector3.right);
                 }
             }
         }
@@ -50,6 +51,7 @@ public class PlungerScript : MonoBehaviour {
 
     private void OnTriggerEnter(Collider o) {
         if (o.gameObject.CompareTag("Ball")) {
+            Debug.Log("Ball is in the Trigger");
             ballList.Add(o.gameObject.GetComponent<Rigidbody>());
         }
         
