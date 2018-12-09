@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af1db2b475f16f24b9016c4cee2eaede, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: c3e1e36b39ce76641b50549b2e1b2bcc, type: 3}
   tagOfObjectToPlay: Ball
   playOnCollison: 1
   playOnTrigger: 0
@@ -161,3 +161,8 @@ MonoBehaviour:
   - {fileID: 10912, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 10900, guid: 0000000000000000f000000000000000, type: 0}
   addToMultiplerValue: 2
+  switchDely: 1
+  clips:
+  - {fileID: 8300000, guid: ea0949055f2f2b04aaa0fa227f1384b1, type: 3}
+  - {fileID: 8300000, guid: 799a60944794664418a60dc5da99ad08, type: 3}
+  - {fileID: 8300000, guid: c3e1e36b39ce76641b50549b2e1b2bcc, type: 3}
