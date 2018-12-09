@@ -94,6 +94,7 @@ public class StateManager : MonoBehaviour {
 
     public void BallLost() {
         ballInPlay = false;
+        FindObjectOfType<SwitchFromTriggerToCollison>().collider.isTrigger = true;
         Debug.Log("In ball lost");
         if(currentBall)
             Destroy(currentBall);

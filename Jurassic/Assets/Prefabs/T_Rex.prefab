@@ -190,6 +190,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   restPosition: 0
   pressedPosition: 90
-  hitStrenght: 12000
+  hitStrenght: 10500
   flipperDamper: 150
   inputName: RFlipper
