@@ -94,11 +94,12 @@ public class StateManager : MonoBehaviour {
 
     public void BallLost() {
         ballInPlay = false;
+        Debug.Log("In ball lost");
         if(currentBall)
             Destroy(currentBall);
-        balls[numberOfBalls - currentBallCount].enabled = false;
         currentBallCount++;
         if (currentBallCount > numberOfBalls) {
+            balls[numberOfBalls - currentBallCount].enabled = false;
             GameObject go = Instantiate(gameOverParticalSystem);
             go.transform.position = gameOverPosition.position;
             Invoke("GameOver", waitTimeForGameOverText);
@@ -111,6 +112,7 @@ public class StateManager : MonoBehaviour {
         }
     }
     private void SpawnBall() {
+        Debug.Log("in spawn ball");
         if (ballPrefab) {
             currentBall = Instantiate(ballPrefab);
             currentBall.transform.position = ballSpawnPosition.position;
