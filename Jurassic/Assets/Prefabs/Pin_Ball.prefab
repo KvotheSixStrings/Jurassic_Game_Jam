@@ -21,10 +21,11 @@ GameObject:
   - component: {fileID: 4571623400670412}
   - component: {fileID: 33617106656636798}
   - component: {fileID: 23898306389942188}
-  - component: {fileID: 135833771729694032}
-  m_Layer: 0
+  - component: {fileID: 135658612624399142}
+  - component: {fileID: 54108931713620838}
+  m_Layer: 10
   m_Name: Pin_Ball_V001:pSphere1
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,7 +38,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4240645574371462}
-  - component: {fileID: 54200899605001064}
   m_Layer: 0
   m_Name: Pin_Ball
   m_TagString: Ball
@@ -52,7 +52,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1502879645006980}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.609, y: 0.87, z: -16.042}
+  m_LocalPosition: {x: -12.24, y: 0.536, z: -7.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4571623400670412}
@@ -66,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1498306786063368}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.417, y: -0.99, z: 16.05}
+  m_LocalPosition: {x: -12.26, y: -0.64, z: 7.53}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4240645574371462}
@@ -114,12 +114,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1498306786063368}
   m_Mesh: {fileID: 4300000, guid: c0721ca6924536c4bb1c1fe5cc943af5, type: 3}
---- !u!54 &54200899605001064
+--- !u!54 &54108931713620838
 Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1502879645006980}
+  m_GameObject: {fileID: 1498306786063368}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -129,7 +129,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!135 &135833771729694032
+--- !u!135 &135658612624399142
 SphereCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
