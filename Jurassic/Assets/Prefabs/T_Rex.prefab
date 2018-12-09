@@ -22,7 +22,10 @@ GameObject:
   - component: {fileID: 33987788480448684}
   - component: {fileID: 23075516342999632}
   - component: {fileID: 65914948026947802}
-  m_Layer: 0
+  - component: {fileID: 54895356833701236}
+  - component: {fileID: 59451975109428232}
+  - component: {fileID: 114915196920059204}
+  m_Layer: 9
   m_Name: T_Rex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,7 +68,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1250586747295184}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: 0, z: -0.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4597821586292668}
@@ -113,6 +116,55 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1250586747295184}
   m_Mesh: {fileID: 4300000, guid: 9abb61e1af161824eb34b253b65c543e, type: 3}
+--- !u!54 &54895356833701236
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1250586747295184}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!59 &59451975109428232
+HingeJoint:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1250586747295184}
+  m_ConnectedBody: {fileID: 0}
+  m_Anchor: {x: 0, y: -0.07, z: 0.27}
+  m_Axis: {x: 0, y: 1, z: 0}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: -12.26, y: 0.305, z: -3.42}
+  m_UseSpring: 0
+  m_Spring:
+    spring: 0
+    damper: 0
+    targetPosition: 0
+  m_UseMotor: 0
+  m_Motor:
+    targetVelocity: 0
+    force: 0
+    freeSpin: 0
+  m_UseLimits: 1
+  m_Limits:
+    min: 0
+    max: 90
+    bounciness: 0
+    bounceMinVelocity: 0.2
+    contactDistance: 0
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!65 &65914948026947802
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -123,5 +175,21 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.7546215, y: 2.4638023, z: 8.147656}
-  m_Center: {x: -0.053544044, y: 1.3576977, z: -1.9966049}
+  m_Size: {x: 3.7546215, y: 2.4638023, z: 8.038121}
+  m_Center: {x: -0.053544044, y: 1.3576977, z: -1.941837}
+--- !u!114 &114915196920059204
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1250586747295184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2668ce2149e2184db78d90caed55843, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  restPosition: 0
+  pressedPosition: 90
+  hitStrenght: 12000
+  flipperDamper: 150
+  inputName: RFlipper
