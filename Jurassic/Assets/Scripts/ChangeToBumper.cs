@@ -17,8 +17,8 @@ public class ChangeToBumper : MonoBehaviour {
 
     private void SwitchToBumper() {
         GameObject go = Instantiate(originalBumper);
-        go.transform.position = transform.position;
+        go.transform.position = transform.parent.position;
         StateManager.instance.SubtractFromMultiplier(multiplierVal);
-        Destroy(gameObject);
+        Destroy(transform.parent.gameObject);
     }
 }

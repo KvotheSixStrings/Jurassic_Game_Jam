@@ -13,5 +13,6 @@ public class SwitchFromTriggerToCollison : MonoBehaviour {
 
     private void SwtichToCollision() {
         collider.isTrigger = false;
+        StateManager.instance.ballInPlay = true;
     }
 }

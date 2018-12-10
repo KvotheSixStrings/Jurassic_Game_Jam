@@ -11,6 +11,7 @@ public class PlungerScript : MonoBehaviour {
     public Slider powerSlider;
     List<Rigidbody> ballList;
     bool ballReady;
+    public Collider trigger;
 	
 	void Start () {
         powerSlider.minValue = 0f;
@@ -30,13 +31,13 @@ public class PlungerScript : MonoBehaviour {
         powerSlider.value = power;
         if (ballList.Count > 0) {
             ballReady = true;
-            if (Input.GetKey(KeyCode.Space)) {
+            if (Input.GetButton("Jump")) {
                 if(power <= maxPower) {
                     power += powerIncrement * Time.deltaTime;
                 }
             }
-            if (Input.GetKeyUp(KeyCode.Space)) {
-               foreach(Rigidbody r in ballList) {
+            if (Input.GetButtonUp("Jump")) {
+               foreach (Rigidbody r in ballList) {
                     r.AddForce(power * Vector3.right);
                 }
             }
@@ -53,6 +54,7 @@ public class PlungerScript : MonoBehaviour {
         if (o.gameObject.CompareTag("Ball")) {
             Debug.Log("Ball is in the Trigger");
             ballList.Add(o.gameObject.GetComponent<Rigidbody>());
+            trigger.isTrigger = true;
         }
         
     }

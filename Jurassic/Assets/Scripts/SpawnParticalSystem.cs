@@ -6,10 +6,19 @@ public class SpawnParticalSystem : MonoBehaviour {
 
     public GameObject particalSystem;
     public Transform positionToSpawnAt;
+    private bool canSpawn = true;
 
     public void SpawnParticals() {
-        GameObject go = Instantiate(particalSystem);
-        go.transform.position = positionToSpawnAt.position;
-        go.transform.localScale = positionToSpawnAt.localScale;
+        if (canSpawn) {
+            GameObject go = Instantiate(particalSystem);
+            go.transform.position = positionToSpawnAt.position;
+            go.transform.localScale = positionToSpawnAt.localScale;
+            canSpawn = false;
+            Invoke("SetCanSpawnTrue", go.GetComponent<RFX4_DeactivateByTime>().DeactivateTime);
+        }
+    }
+
+    public void SetCanSpawnTrue() {
+        canSpawn = true;
     }
 }

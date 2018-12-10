@@ -40,6 +40,7 @@ public class StateManager : MonoBehaviour {
     public GameObject gameOverParticalSystem;
     public Transform gameOverPosition;
     public float waitTimeForGameOverText = 3f;
+    public float gameOverDely = 0.5f;
     public GameObject gameUi;
 
     void Start() {
@@ -101,15 +102,20 @@ public class StateManager : MonoBehaviour {
             Destroy(currentBall);
         currentBallCount++;
         if (currentBallCount > numberOfBalls) {
-            GameObject go = Instantiate(gameOverParticalSystem);
-            go.transform.position = gameOverPosition.position;
-            Invoke("GameOver", waitTimeForGameOverText);
+            Invoke("GameOverStart",gameOverDely);
         }
         else {
             SpawnBall();
 
         }
     }
+
+    private void GameOverStart() {
+        GameObject go = Instantiate(gameOverParticalSystem);
+        go.transform.position = gameOverPosition.position;
+        Invoke("GameOver", waitTimeForGameOverText);
+    }
+
     private void SpawnBall() {
         Debug.Log("in spawn ball");
         if (ballPrefab) {

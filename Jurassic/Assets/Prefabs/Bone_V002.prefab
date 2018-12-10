@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 114540197789470040}
   - component: {fileID: 65833187975881018}
   - component: {fileID: 114284686004346558}
+  - component: {fileID: 114561357451362136}
   m_Layer: 0
   m_Name: Bone
   m_TagString: Untagged
@@ -141,9 +142,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasMultipleStages: 1
   textures:
-  - {fileID: 2800000, guid: b8bdc0a567fd7e44982fc47f7f1fe534, type: 3}
-  - {fileID: 2800000, guid: 8f3ad7c0c2585c24fa803786822257a5, type: 3}
-  - {fileID: 2800000, guid: 76d9b8dc677019a4a8839d3cc6a41a03, type: 3}
+  - {fileID: 2800000, guid: 9836e0bff48223b4f944163da6ab2f18, type: 3}
+  - {fileID: 2800000, guid: fee5a20ac0c4bed47b10545f968c2858, type: 3}
+  - {fileID: 2800000, guid: da6d71282a2d50e41ad9d5de749a042f, type: 3}
   addToMultiplerValue: 10
 --- !u!114 &114284686004346558
 MonoBehaviour:
@@ -174,3 +175,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreValue: 50
   shouldAdd: 1
+--- !u!114 &114561357451362136
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1148730715558808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ddf9720bcd4f794294559daa5aee4b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 75
+  amount: 0.15
+  duration: 0.2
+  hasParent: 1

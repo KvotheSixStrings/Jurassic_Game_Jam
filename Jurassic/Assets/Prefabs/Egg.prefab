@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 65984577260564010}
   - component: {fileID: 114133536122416942}
   - component: {fileID: 114814842481818660}
+  - component: {fileID: 114556692566226032}
+  - component: {fileID: 114263671350385024}
   m_Layer: 0
   m_Name: pSphere1
   m_TagString: Untagged
@@ -39,8 +41,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4969506613097250}
-  - component: {fileID: 114143834766323458}
-  - component: {fileID: 114251057218111106}
   m_Layer: 0
   m_Name: Egg
   m_TagString: Untagged
@@ -67,14 +67,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1502454152139284}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.18127282, z: -0, w: 0.9834328}
   m_LocalPosition: {x: 2.85, y: 0.738, z: 3.43}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 4535586235162248}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -20.888, z: 0}
 --- !u!23 &23258246635332064
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -144,19 +144,36 @@ MonoBehaviour:
   hasMultipleStages: 1
   textures:
   - {fileID: 2800000, guid: 42866de93bc2a5847a8eef576a54c0fd, type: 3}
-  - {fileID: 2800000, guid: 113ca42294d76fb47b26db2327882716, type: 3}
-  addToMultiplerValue: 2
+  - {fileID: 2800000, guid: 76e60452b76c9044d95660635a5843bf, type: 3}
+  - {fileID: 2800000, guid: a87847d261de8954bacf0b0cb011d921, type: 3}
+  - {fileID: 2800000, guid: 3b987896d47b9944f989cb83c8ce639c, type: 3}
+  - {fileID: 2800000, guid: 47353c7fd5a9e4c4ea3643b5698da0b2, type: 3}
+  - {fileID: 2800000, guid: c48d48d69e0064e4ca65474a6f9aa5e6, type: 3}
+  addToMultiplerValue: 100
   switchDely: 0.2
   clips:
   - {fileID: 8300000, guid: ea0949055f2f2b04aaa0fa227f1384b1, type: 3}
   - {fileID: 8300000, guid: 799a60944794664418a60dc5da99ad08, type: 3}
   - {fileID: 8300000, guid: c3e1e36b39ce76641b50549b2e1b2bcc, type: 3}
---- !u!114 &114143834766323458
+--- !u!114 &114263671350385024
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1502454152139284}
+  m_GameObject: {fileID: 1489105180766616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 756bcd8e0dd565044a4b9b24b93cc1aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreValue: 100
+  shouldAdd: 1
+--- !u!114 &114556692566226032
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1489105180766616}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ddf9720bcd4f794294559daa5aee4b5, type: 3}
@@ -165,19 +182,7 @@ MonoBehaviour:
   speed: 75
   amount: 0.15
   duration: 0.2
---- !u!114 &114251057218111106
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1502454152139284}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 756bcd8e0dd565044a4b9b24b93cc1aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreValue: 100
-  shouldAdd: 1
+  hasParent: 1
 --- !u!114 &114814842481818660
 MonoBehaviour:
   m_ObjectHideFlags: 1
